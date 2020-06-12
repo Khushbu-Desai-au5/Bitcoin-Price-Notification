@@ -28,7 +28,6 @@ pip install requests (To send HTTP requests and get responce from it)
 
 ### Set up command line interface
 
-optional argument 
 ```
 optional arguments:
 
