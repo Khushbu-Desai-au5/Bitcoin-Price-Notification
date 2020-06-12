@@ -61,21 +61,21 @@ exchange = "USD"
 
 As shown in diagram,this utility will make an API call to coinmarket API to get latest price of crypto currency.
 
-if user give coin type of crypto currency ,then it will fetch the price for that coin type. coin type such as Bitcoin, Ethereum, Ripple etc..
+If user give coin type of crypto currency ,then it will fetch the price for that coin type. coin type such as Bitcoin, Ethereum, Ripple etc..
 
-if user didn't give coin type then by default it will fetch bitcoin crypto currency price.
+If user didn't give coin type then by default it will fetch bitcoin crypto currency price.
 
 This utility will call fetch price API after every time Interval given by user or if its not given then it will take default interval.
 
 After getting latest price,if user has choose exchange option,python program will call exchangerateapi to get latest exchange rate of currency and convert crypto price into currency chosen by user.
 
-if user didn't give any exchange currency then by default it will give price in USD.
+If user didn't give any exchange currency then by default it will give price in USD.
 
 Now, to send notifications at certain time interval and also to send notification when price reach to a certain value as theresold value provided by user,this utility use the automation website IFTTT. 
 
 IFTTT (“if this, then that”) is a web service that bridges the gap between different apps and devices.
 
-for that we need to create four IFTTT applets:
+For that we need to create four IFTTT applets:
 
 1) Emergency notification when crypto price falls under a certain threshold (To send notification to Telegram)
 2) Regular Telegram updates on the crypto currency price.(To send notification to Telegram)
@@ -94,7 +94,7 @@ There are two option for notification :
 2)Email
 
 User can choose any option.if user didn't give any notification type then by default notification send to telegram.
-same for thersold value(price falls under some value),user can choose when they want emergency notification.
+Same for thersold value(price falls under some value),user can choose when they want emergency notification.
 
 ## Below are screenshot of notifications:
 
