@@ -28,19 +28,23 @@ pip install requests (To send HTTP requests and get responce from it)
 
 ### Set up command line interface
 
+optional argument 
 ```
-import argparse
-parser = argparse.ArgumentParser()  # Initialize parser
-```
+optional arguments:
 
-Adding optional argument
-
-```
-parser.add_argument("-t", "--Threshold",help="Enter Threshold Price for Emergency Notification")
-parser.add_argument("-i", "--Interval",help=" Enter Notification Time Interval in Seconds")
-parser.add_argument("-c", "--CoinType",help="Enter Type of Crypto-Currency")
-parser.add_argument("-n", "--notification",help='Enter where you want notification: Email or Telegram')
-parser.add_argument("-e", "--exchange",help='Enter exchange currency in which you want notification(write only 3 digit e.g. INR)')
+  -h, --help            show this help message and exit
+  -t THRESHOLD, --Threshold THRESHOLD
+                        Enter Threshold Price for Emergency Notification
+  -i INTERVAL, --Interval INTERVAL
+                        Enter Notification Time Interval in Seconds
+  -c COINTYPE, --CoinType COINTYPE
+                        Enter Type of Crypto-Currency
+  -n NOTIFICATION, --notification NOTIFICATION
+                        Enter where you want notification: Email or Telegram
+  -e EXCHANGE, --exchange EXCHANGE
+                        Enter exchange currency in which you want
+                        notification(write only 3 digit e.g. INR)
+                        
 ```
 
 If user didn't give above optional argument then python will consider below default parameter
@@ -56,39 +60,63 @@ exchange = "USD"
 <img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Diagram.PNG"/>
 
 
-As shown in diagram ,i have wriiten python program in such a way that,it will make API call to coinmarket API to get latest price of crypto currency.
+As shown in diagram,this utility will make an API call to coinmarket API to get latest price of crypto currency.
 
-if user give coin type of crypto currency ,then it will fetch the price for that coin type.
+if user give coin type of crypto currency ,then it will fetch the price for that coin type. coin type such as Bitcoin, Ethereum, Ripple etc..
 
-if user didn't give coin type then bydefault it will fetch bitcoin price.
+if user didn't give coin type then by default it will fetch bitcoin crypto currency price.
 
-python program will call API after every time Interval given by user or if its not given then it will take default interval.
+This utility will call fetch price API after every time Interval given by user or if its not given then it will take default interval.
 
 After getting latest price,if user has choose exchange option,python program will call exchangerateapi to get latest exchange rate of currency and convert crypto price into currency chosen by user.
 
 if user didn't give any exchange currency then by default it will give price in USD.
 
-Now, to send notifications at certain time interval and also to send notification when price reach to a certain value as theresold value provided by user i use the automation website IFTTT. 
+Now, to send notifications at certain time interval and also to send notification when price reach to a certain value as theresold value provided by user,this utility use the automation website IFTTT. 
 
 IFTTT (“if this, then that”) is a web service that bridges the gap between different apps and devices.
 
-for that i have to create four IFTTT applets:
+for that we need to create four IFTTT applets:
 
 1) Emergency notification when crypto price falls under a certain threshold (To send notification to Telegram)
 2) Regular Telegram updates on the crypto currency price.(To send notification to Telegram)
 3) Emergency notification when crypto price falls under a certain threshold (To send notification to Email)
 4) Regular Telegram updates on the crypto currency price.(To send notification to Email)
 
-Both will be triggered by our Python app which will consume the data from the Coinmarketcap API.
+Applet will be triggered by our Python app which will consume the data from the Coinmarketcap API.
 
 An IFTTT applet is composed of two parts: a trigger and an action.
 
 Our Python app will make an HTTP request to the webhook URL which will trigger an action.
 
+There are two option for notification :
 
-Here i gave two option for notification 1)Telegram and 2)Email.
-User can choose any option.if user didn't give any notification type then bydefault notification send to telegram.
+1)Telegram
+2)Email
+
+User can choose any option.if user didn't give any notification type then by default notification send to telegram.
 same for thersold value(price falls under some value),user can choose when they want emergency notification.
 
 ## Below are screenahot of notifications:
 
+#### Telegram Emergency notification
+
+
+<img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Emergency%20telegram%20notification.png" width=700/>
+
+#### Telegram Regular notification
+
+
+<img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Regular%20telegram%20notification.PNG" width=700/>
+
+#### Email Emergency notification
+
+
+<img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Emergency%20Email%20notification.png" width=700/>
+
+
+
+#### Email Regular notification
+
+
+<img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Regular%20Email%20notification.PNG" width=700/>
