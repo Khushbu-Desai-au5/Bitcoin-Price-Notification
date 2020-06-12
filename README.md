@@ -97,7 +97,7 @@ There are two option for notification :
 User can choose any option.if user didn't give any notification type then by default notification send to telegram.
 same for thersold value(price falls under some value),user can choose when they want emergency notification.
 
-## Below are screenahot of notifications:
+## Below are screenshot of notifications:
 
 #### Telegram Emergency notification
 
@@ -120,3 +120,8 @@ same for thersold value(price falls under some value),user can choose when they 
 
 
 <img src="https://github.com/Khushbu-Desai-au5/Bitcoin-Price-Notification/blob/master/Regular%20Email%20notification.PNG" width=700/>
+
+
+
+
+
