@@ -39,6 +39,8 @@ parser.add_argument("-e", "--exchange",
 # Read arguments from command line
 args = parser.parse_args()
 
+# if user didn't give optional argument then below will consider by python
+
 threshold = 10000
 interval = 60
 coinType = 'Bitcoin'
@@ -118,6 +120,7 @@ def push_ifttt_notification(notification, data):
 
 
 while True:
+    # Make a API call to coinmarket API to get latest price of crypto currency
     output = get_cryptoCurrency_latest_price(coinType, exchange)
     date = datetime.now()
     price = float(output['price'])
